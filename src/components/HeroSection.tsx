@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import watermarkImg from '../assets/watermark.png';
+import heroCharacterImg from '../assets/hero-character.png';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -64,20 +65,39 @@ export const HeroSection: React.FC = () => {
         />
       )}
 
-      {/* ================= 2. FIXED VIDEO LAYER ================= */}
-      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="h-screen w-auto max-w-none object-contain origin-right scale-95 md:scale-[0.98] lg:scale-100"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+      {/* ================= 2. CINEMATIC HERO CHARACTER LAYER ================= */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end">
+        {/* Ambient Gold Glow Behind Character */}
+        <div className="absolute top-1/4 right-1/4 w-[28rem] h-[28rem] bg-[#D4AF37]/12 rounded-full blur-[140px] pointer-events-none" />
 
-        {/* Seamless Soft Left Edge Blend */}
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
+        {/* Hero Character Visual */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+          className="relative h-full w-full flex items-center justify-end"
+        >
+          <motion.img
+            src={heroCharacterImg}
+            alt="Mandeep Khatri Hero Character"
+            animate={{
+              y: [-4, 4, -4],
+            }}
+            transition={{
+              duration: 5.5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+            className="h-full w-full object-cover object-[72%_center] lg:object-[68%_center] xl:object-[60%_center] opacity-50 sm:opacity-70 md:opacity-95 lg:opacity-100 filter contrast-[1.04] brightness-[1.02]"
+          />
+        </motion.div>
+
+        {/* Left Edge Dark Gradient Blend so Text Pops with High Contrast */}
+        <div className="absolute inset-y-0 left-0 w-full sm:w-3/4 md:w-3/5 lg:w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
+
+        {/* Top & Bottom Vignettes */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black via-black/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none" />
 
         {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
         <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none flex items-center justify-center z-10">
@@ -118,7 +138,7 @@ export const HeroSection: React.FC = () => {
             className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            LOHITHA.
+            MANDEEP KHATRI.
           </a>
 
           {/* Navigation Links */}
@@ -178,12 +198,12 @@ export const HeroSection: React.FC = () => {
 
                 {/* Line 2: DIGITAL */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
-                  DIGITAL
+                  SYSTEMS &amp;
                 </span>
 
                 {/* Line 3: EXPERIENCES */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)]">
-                  EXPERIENCES
+                  CLOUD INFRA
                 </span>
               </h1>
             </motion.div>
@@ -194,7 +214,7 @@ export const HeroSection: React.FC = () => {
                 className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-[#C4B29E]"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                FULL STACK DEVELOPER <span className="text-[#8C6D4F] mx-1">•</span> UI/UX DESIGNER <span className="text-[#8C6D4F] mx-1">•</span> DATA SCIENCE
+                CLOUD ENGINEERING <span className="text-[#8C6D4F] mx-1">•</span> NETWORKING &amp; SYSTEMS <span className="text-[#8C6D4F] mx-1">•</span> PYTHON &amp; DEVOPS
               </p>
             </motion.div>
 
@@ -205,9 +225,9 @@ export const HeroSection: React.FC = () => {
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>
-                I turn bold ideas into seamless digital experiences.
+                I am an Information Technology student passionate about Cloud Computing, Networking, Linux, and practical system architectures.
                 <br />
-                Where frontend meets powerful backend, and code transforms vision into impact.
+                Building scalable services and hands-on real-world engineering solutions.
               </p>
             </motion.div>
 
@@ -234,7 +254,8 @@ export const HeroSection: React.FC = () => {
 
               {/* Download Resume Button */}
               <motion.a
-                href="/resume.pdf"
+                href="/Mandeep-Khatri-CV.pdf"
+                download="Mandeep-Khatri-CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={() => setIsHovered(true)}
@@ -267,8 +288,8 @@ export const HeroSection: React.FC = () => {
               className="text-[9.5px] font-medium tracking-[0.24em] uppercase text-[#E0D3C5] space-y-1 mb-3"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              <p>CODE IS MY CRAFT.</p>
-              <p>IMPACT IS MY GOAL.</p>
+              <p>SYSTEMS ARE MY CANVAS.</p>
+              <p>CLOUD IS MY DOMAIN.</p>
             </div>
 
             {/* 3. Gold Accent Line */}
@@ -282,7 +303,7 @@ export const HeroSection: React.FC = () => {
                 letterSpacing: '0.04em',
               }}
             >
-              Lohitha
+              Mandeep
             </div>
           </motion.div>
         </div>

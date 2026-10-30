@@ -63,11 +63,67 @@ export const ContactSection: React.FC = () => {
               </motion.div>
 
               <p
-                className="text-xs sm:text-[13px] font-light text-[#A8988B] leading-relaxed max-w-md"
+                className="text-xs sm:text-[13px] font-light text-[#A8988B] leading-relaxed max-w-md mb-8"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                Have an ambitious system to architect, an engineering opportunity, or a collaborative inquiry? Send a direct dispatch below.
+                Have an ambitious system to architect, a cloud infrastructure role, or a collaborative engineering inquiry? Connect directly or send a dispatch below.
               </p>
+
+              {/* Verified Direct Channels */}
+              <div className="space-y-3.5 mb-8">
+                <a
+                  href="https://github.com/mandeepkhatri800-source"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-sm border border-[#8C6D4F]/30 bg-[#120F0C] hover:border-[#D4AF37] hover:bg-[#1A1510] text-[#E8DFD8] transition-all duration-300 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <span className="text-[10px] font-mono tracking-wider text-[#D4AF37] uppercase">// GITHUB</span>
+                    <span className="text-xs text-[#E0D3C5] font-medium" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                      github.com/mandeepkhatri800-source
+                    </span>
+                  </div>
+                  <span className="text-xs text-[#8C6D4F] group-hover:text-[#D4AF37] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/mandeep-khatri-6479133bb/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-sm border border-[#8C6D4F]/30 bg-[#120F0C] hover:border-[#D4AF37] hover:bg-[#1A1510] text-[#E8DFD8] transition-all duration-300 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <span className="text-[10px] font-mono tracking-wider text-[#D4AF37] uppercase">// LINKEDIN</span>
+                    <span className="text-xs text-[#E0D3C5] font-medium" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                      linkedin.com/in/mandeep-khatri
+                    </span>
+                  </div>
+                  <span className="text-xs text-[#8C6D4F] group-hover:text-[#D4AF37] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+                </a>
+
+                <a
+                  href="mailto:mandeepkhatri800@gmail.com"
+                  className="flex items-center justify-between p-3 rounded-sm border border-[#8C6D4F]/30 bg-[#120F0C] hover:border-[#D4AF37] hover:bg-[#1A1510] text-[#E8DFD8] transition-all duration-300 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <span className="text-[10px] font-mono tracking-wider text-[#D4AF37] uppercase">// EMAIL</span>
+                    <span className="text-xs text-[#E0D3C5] font-medium" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                      mandeepkhatri800@gmail.com
+                    </span>
+                  </div>
+                  <span className="text-xs text-[#8C6D4F] group-hover:text-[#D4AF37] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+                </a>
+
+                <div className="flex items-center justify-between p-3 rounded-sm border border-[#8C6D4F]/20 bg-[#0C0A08] text-[#A8988B]">
+                  <div className="flex items-center space-x-3">
+                    <span className="text-[10px] font-mono tracking-wider text-[#8C6D4F] uppercase">// LOCATION</span>
+                    <span className="text-xs text-[#B3A497]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                      Kathmandu, Nepal 🇳🇵
+                    </span>
+                  </div>
+                  <span className="text-xs text-[#8C6D4F]">LBEF Campus</span>
+                </div>
+              </div>
             </div>
           </div>
 
